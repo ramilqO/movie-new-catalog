@@ -5,14 +5,14 @@ import './Movie.css';
 
 const Movie = ({id, title, year, summary, poster}) => {
     return (
-<div className='Movie border rounded col-lg-4 col-md-6 col-sm-12 mr-2' id={id} >
+<div className='Movie border border-dark rounded col-lg-4 col-md-6 col-sm-12 mr-2' id={id} >
     <img className="card-img-top" src={poster} alt={title} />
-    <div className="container">
-        <h5 className="card-title">{title}</h5>
+    <div className="container d-block">
+        <h5 className="card-title left">{title}</h5>
         <div className="card-body">
         {/* <p className="card-text">{summary}</p> */}
         <div class="card-footer text-muted">{year}</div>
-        <a href="/localhost" className="btn btn-primary">Смотреть</a>
+        <a href="/localhost" className="btn btn-success">Смотреть</a>
         </div>
     </div>  
 </div>

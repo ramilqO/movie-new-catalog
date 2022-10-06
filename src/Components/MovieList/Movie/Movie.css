@@ -1,0 +1,21 @@
+.card-img-top {
+    transition: 0.5s;
+    width: 150px;
+    height: 200px;
+}
+
+.Movie {
+    display: flex;
+    margin: 10px;
+    background: rgb(255, 255, 255);
+    transition: 1s;
+}
+.container {
+    display: block;
+}
+
+.Movie:hover {
+    cursor: pointer;
+    box-shadow: 6px 6px #c64343, 12px 12px #6c6666;
+    background: rgb(82, 102, 255);
+}
