@@ -8,7 +8,7 @@ class MovieList extends Component {
     state = {
         isLoaded: true,
         movies: [],
-        sortBy: "rating"
+        sortBy: this.props.sorted
       }
 
       getMovies = async () => {
@@ -43,8 +43,7 @@ class MovieList extends Component {
         </div>
           )
       }
-    
-    
+
       renderFunc = () => {
         const {isLoaded} = this.state;
     
@@ -59,10 +58,16 @@ class MovieList extends Component {
         }
       }
     
+      sortBy = () => {
+        this.setState({sortBy: "year"})
+        this.getMovies();
+      } //пробую выполнить функционал сортировки по году
+
     render() {
         return (
             <div>
                 {this.renderFunc()}
+                <button onClick={this.sortBy}>Sort by year</button>
             </div>
         );
     }

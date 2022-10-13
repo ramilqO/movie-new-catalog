@@ -12,8 +12,10 @@ class App extends Component {
     return(
       <div className='App'>
         <Navbar />
-        <Sidebar />
-        <Content />
+        <div className="container-fluid d-flex">
+        <Sidebar className="Sidebar"/>
+        <Content className="Content"/>
+        </div>
       </div>
     )
   }

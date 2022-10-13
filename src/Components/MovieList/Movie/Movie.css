@@ -1,14 +1,14 @@
 .card-img-top {
-    transition: 0.5s;
+    transition: 0.3s;
     width: 150px;
-    height: 200px;
+    height: 100%;
 }
 
 .Movie {
     display: flex;
     margin: 10px;
     background: rgb(255, 255, 255);
-    transition: 1s;
+    transition: 0.3s;
 }
 .container {
     display: block;
@@ -19,3 +19,4 @@
     box-shadow: 6px 6px #c64343, 12px 12px #6c6666;
     background: rgb(82, 102, 255);
 }
+

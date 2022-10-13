@@ -1,12 +1,13 @@
 import MovieList from "../../Components/MovieList/MovieList";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React, { Component } from 'react';
 
 class Content extends Component {
   render() {
     return (
-      <div>
-        <MovieList />
+      <div className="Content border border-dark">
+        <MovieList sorted="rating"/>
       </div>
     );
   }
