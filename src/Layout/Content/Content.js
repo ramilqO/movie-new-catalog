@@ -6,8 +6,8 @@ import React, { Component } from 'react';
 class Content extends Component {
   render() {
     return (
-      <div className="Content border border-dark">
-        <MovieList sorted="rating"/>
+      <div className="Content border border-dark bg-light">
+        <MovieList/>
       </div>
     );
   }

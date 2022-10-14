@@ -3,23 +3,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Sidebar = () => {
-  return (
-  <div className='Sidebar col-2'>
-    <div className="container">
-      <ul class="nav">
-        <li class="nav-item">
-           <a class="nav-link active" aria-current="page" href="/localhost">Сортировать по году</a>
+    return (
+        <div className='col'>
+            <div className="container">
+      <ul className="nav">
+        <li className="nav-item">
+           <a className="nav-link active" aria-current="page" href="/localhost">Главная</a>
         </li>
-        <li class="nav-item">
-           <a class="nav-link active" aria-current="page" href="#">Сортировать по жанру</a>
-        </li>
-        <li class="nav-item">
-           <a class="nav-link active" aria-current="page" href="#">Сортировать по рейтингу</a>
+        <li className="nav-item">
+           <a className="nav-link active" aria-current="page" href="#">Избранное</a>
         </li>
       </ul>
-    </div>
-  </div>
-  );
+          </div>
+        </div>
+    );
 }
 
 export default Sidebar;

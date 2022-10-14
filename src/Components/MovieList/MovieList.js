@@ -8,7 +8,7 @@ class MovieList extends Component {
     state = {
         isLoaded: true,
         movies: [],
-        sortBy: this.props.sorted
+        sortBy: "rating"
       }
 
       getMovies = async () => {
@@ -58,16 +58,44 @@ class MovieList extends Component {
         }
       }
     
-      sortBy = () => {
+      sortByYear = () => {
         this.setState({sortBy: "year"})
         this.getMovies();
-      } //пробую выполнить функционал сортировки по году
+      }
+
+      sortByGenre = () => {
+        this.setState({sortBy: "genre"})
+        this.getMovies();
+      }
+
+      sortByRating = () => {
+        this.setState({sortBy: "rating"})
+        this.getMovies();
+      }
 
     render() {
         return (
             <div>
-                {this.renderFunc()}
-                <button onClick={this.sortBy}>Sort by year</button>
+               <div className='movie__list'>
+                  <div className="container">
+                      <ul className="nav">
+                        <li className="nav-item">
+                          <button className="nav-link active btn btn-success" aria-current="page" href="/localhost" onClick={this.sortByYear}>Сортировать по году</button>
+                        </li>
+
+                        <li className="nav-item">
+                          <button className="nav-link active btn btn-success" aria-current="page" href="#" onClick={this.sortByGenre}>Сортировать по жанру</button>
+                        </li>
+
+                        <li className="nav-item">
+                          <button className="nav-link active btn btn-success" aria-current="page" href="#" onClick={this.sortByRating}>Сортировать по рейтингу</button>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+
+                <div>{this.renderFunc()}</div>
+
             </div>
         );
     }

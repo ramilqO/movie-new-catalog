@@ -13,8 +13,8 @@ class App extends Component {
       <div className='App'>
         <Navbar />
         <div className="container-fluid d-flex">
-        <Sidebar className="Sidebar"/>
-        <Content className="Content"/>
+        <Sidebar />
+        <Content/>
         </div>
       </div>
     )
