@@ -1,10 +1,12 @@
 import React from 'react';
+import "./Sidebar.css";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Sidebar = () => {
     return (
-        <div className='col'>
+        <div className='Sidebar col'>
             <div className="container">
       <ul className="nav">
         <li className="nav-item">
