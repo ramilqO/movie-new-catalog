@@ -1,7 +1,6 @@
 import React from 'react';
 import "./Sidebar.css";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Sidebar = () => {
