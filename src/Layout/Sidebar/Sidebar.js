@@ -12,7 +12,7 @@ const Sidebar = () => {
            <a className="nav-link active" aria-current="page" href="/localhost">Главная</a>
         </li>
         <li className="nav-item">
-           <a className="nav-link active" aria-current="page" href="#">Избранное</a>
+           <a className="nav-link active" aria-current="page" href="/localhost">Избранное</a>
         </li>
       </ul>
           </div>
