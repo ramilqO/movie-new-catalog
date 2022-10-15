@@ -13,6 +13,7 @@ const Movie = ({id, title, year, summary, poster}) => {
         <div className="card-body">
         <div class="card-footer text-muted">{year}</div>
         <a href="/localhost" className="btn btn-success">Смотреть</a>
+        <p className='summary text-muted'>{summary.slice(0, 70)}...</p>
         </div>
     </div>  
 </div>

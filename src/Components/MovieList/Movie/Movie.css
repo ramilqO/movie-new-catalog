@@ -16,7 +16,7 @@
 
 .Movie:hover {
     cursor: pointer;
-    box-shadow: 6px 6px #c64343, 12px 12px #6c6666;
+    box-shadow: 3px 3px #c64343, 6px 6px #d1d1d1;
     background: rgb(82, 102, 255);
 }
 
