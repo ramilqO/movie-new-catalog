@@ -5,6 +5,7 @@ import Content from './Layout/Content/Content';
 import Navbar from './Layout/Navbar/Navbar';
 import Sidebar from './Layout/Sidebar/Sidebar';
 
+
 class App extends Component {
 
   render() {
@@ -13,7 +14,7 @@ class App extends Component {
         <Navbar />
         <div className="container-fluid d-flex">
         <Sidebar />
-        <Content/>
+        <Content />
         </div>
       </div>
     )

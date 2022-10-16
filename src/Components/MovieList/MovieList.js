@@ -80,16 +80,16 @@ class MovieList extends Component {
                <div className='movie__list'>
                   <div className="container">
                       <ul className="nav">
-                        <li className="nav-item m-3">
-                          <button className="nav-link active btn btn-success" aria-current="page" href="/localhost" onClick={this.sortByYear()}>Сортировать по году</button>
+                        <li className='nav-item m-3'>
+                          <button className="nav-link active btn btn-success" aria-current="page" href="/localhost" onClick={this.sortByYear}>Сортировать по году</button>
                         </li>
 
                         <li className="nav-item m-3">
-                          <button className="nav-link active btn btn-success" aria-current="page" href="#" onClick={this.sortByGenre()}>Сортировать по жанру</button>
+                          <button className="nav-link active btn btn-success" aria-current="page" href="#" onClick={this.sortByGenre}>Сортировать по жанру</button>
                         </li>
 
                         <li className="nav-item m-3">
-                          <button className="nav-link active btn btn-success" aria-current="page" href="#" onClick={this.sortByRating()}>Сортировать по рейтингу</button>
+                          <button className="nav-link active btn btn-success" aria-current="page" href="#" onClick={this.sortByRating}>Сортировать по рейтингу</button>
                         </li>
                      </ul>
                   </div>
