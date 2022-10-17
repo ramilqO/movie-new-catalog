@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Sidebar.css";
-
+import {Link} from "react-router-dom";
 
 
 const Sidebar = () => {
@@ -11,10 +11,10 @@ const Sidebar = () => {
             <div className="container">
       <ul className="nav">
         <li className="nav-item">
-           <a className="nav-link active" aria-current="page" href="/localhost">Главная</a>
+           <Link className="nav-link active" aria-current="page" to="/main">Главная</Link>
         </li>
         <li className="nav-item">
-           <a className="nav-link active" aria-current="page" href="/localhost">Избранное</a>
+           <Link className="nav-link active" aria-current="page" to="/favorites">Избранное</Link>
         </li>
       </ul>
           </div>

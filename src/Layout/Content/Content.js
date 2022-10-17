@@ -9,11 +9,12 @@ class Content extends Component {
   render() {
     return (
       <div className="Content border bg-light">
-        {/* <Home /> */}
+        <Home />
         {/* <BrowserRouter>
-          <Link to="Favorites">Favorites</Link>
           <Routes>
-            <Route path="/favorites" element={<Favorites />}></Route>
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/home" element={<Home />} />
+
           </Routes>
         </BrowserRouter> */}
       </div>
