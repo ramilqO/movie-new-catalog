@@ -1,6 +1,6 @@
 .card-img-top {
     transition: 0.3s;
-    width: 150px;
+    width: 50%;
     height: 100%;
 }
 
@@ -8,15 +8,57 @@
     display: flex;
     margin: 10px;
     background: rgb(255, 255, 255);
-    transition: 0.3s;
+    transition: 0.5s;
+    max-height: 100%;
 }
 .container {
     display: block;
 }
 
-.Movie:hover {
-    cursor: pointer;
-    box-shadow: 3px 3px #c64343, 6px 6px #d1d1d1;
-    background: rgb(82, 102, 255);
+.card__info {
+    position: absolute;
+    display: none;
+
+    padding: 20px;
 }
 
+.Movie:hover {
+    cursor: pointer;
+    box-shadow: 6px 6px #356b31cf, 6px 6px #d1d1d1;
+}
+
+.Movie {
+    min-height: 200px;
+    border: 1px solid #141414;
+    position: relative;
+  }
+
+  .Movie::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    left: 0;
+    top: 0;
+    transition: opacity 0.5s;
+    
+    opacity: 0;
+  }
+  
+  .Movie:hover::after {
+    opacity: 1;
+  }
+  
+  .Movie:hover > .card__info {
+    display: block;
+    z-index: 1;
+}
+
+.rating {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  border: 8px solid green;
+  border-radius: 50%;
+}

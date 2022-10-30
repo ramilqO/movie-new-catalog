@@ -11,7 +11,7 @@ const Sidebar = () => {
             <div className="container">
       <ul className="nav">
         <li className="nav-item">
-           <Link className="nav-link active" aria-current="page" to="/main">Главная</Link>
+           <Link className="nav-link active" aria-current="page" to="/home">Главная</Link>
         </li>
         <li className="nav-item">
            <Link className="nav-link active" aria-current="page" to="/favorites">Избранное</Link>

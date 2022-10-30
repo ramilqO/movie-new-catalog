@@ -37,7 +37,8 @@ class MovieList extends Component {
                 year={movie.year}
                 poster={movie.medium_cover_image}
                 id={movie.id}
-                key={movie.id}
+                key={movie.id + 1}
+                rating={movie.rating}
               />)}
           </div>
         </div>
@@ -49,7 +50,7 @@ class MovieList extends Component {
     
         if(isLoaded) {
           return(
-            <div className='loader'>
+            <div className='loader text-center'>
               <span>Загрузка...</span>
             </div>
           )

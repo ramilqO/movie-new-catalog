@@ -3,27 +3,33 @@ import PropTypes from 'prop-types';
 
 import './Movie.css';
 
-const Movie = ({id, title, year, summary, poster}) => {
+const Movie = ({ id, title, year, summary, poster, rating }) => {
     return (
-<div className='Movie bg-dark text-light border border-dark rounded col-lg-4 col-md-6 col-sm-12 mr-2' id={id} >
-    <img className="card-img-top" src={poster} alt={title} />
-    <div className="container d-block">
-        <h5 className="card-title left">{title}</h5>
-        <div className="card-body">
-        <div class="card-footer text-muted">{year}</div>
-        <a href="/localhost" className="btn btn-success">Смотреть</a>
-        <p className='summary text-muted'>{summary.slice(0, 70)}...</p>
+        <div className='Movie bg-dark text-light border border-dark rounded col-lg-4 col-md-6 col-sm-12 mr-2' id={id} >
+            <img className="card-img-top" src={poster} alt={title} />
+            <div className="container d-block">
+                <h5 className="card-title left">{title}</h5>
+                <div className="card-body">
+                    <div className="card-footer text-muted">{year}</div>
+                    <p className='summary text-muted'>{summary.slice(0, 70)}...</p>
+                </div>
+            </div>
+
+            <div className="card__info">
+                <h5>{summary.slice(0, 150)} ...</h5>
+                <div className="rating"><h1 className='rating__text'>{rating}</h1></div>
+            </div>
         </div>
-    </div>  
-</div>
-)}
+    )
+}
 
 Movie.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     year: PropTypes.number.isRequired,
     summary: PropTypes.string.isRequired,
-    poster: PropTypes.string.isRequired
+    poster: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired
 }
 
 export default Movie;
