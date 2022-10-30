@@ -76,7 +76,7 @@ class MovieList extends Component {
 
     render() {
         return (
-            <div className='pt-3'>
+            <div className='p-3'>
               <h1>Каталог</h1> <hr />
                <div className='movie__list'>
                   <div className="container">
