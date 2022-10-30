@@ -18,10 +18,6 @@ const Movie = ({ id, title, year, summary, poster, rating }) => {
                 </div>
             </div>
 
-            <div className="card__info">
-                <h5>{summary.slice(0, 100)} ...</h5>
-                <div className="rating"><h1 className='rating__text'>{rating}</h1></div>
-            </div>
         </div>
     )
 }
