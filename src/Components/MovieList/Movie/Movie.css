@@ -9,8 +9,8 @@
     background: rgb(255, 255, 255);
     transition: 0.5s;
     max-height: 100%;
-    /* border-radius: 20px; */
     width: 70vh;
+    overflow: hidden;
 }
 .container {
     display: block;
