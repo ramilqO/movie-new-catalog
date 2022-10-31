@@ -16,6 +16,9 @@ const Sidebar = () => {
           <li className="nav-item">
             <Link className="nav-link active" aria-current="page" to="/favorites">Избранное</Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link active" aria-current="page" to="/list">Каталог</Link>
+          </li>
         </ul>
       </div>
     </div>

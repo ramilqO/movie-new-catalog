@@ -7,7 +7,7 @@
 .Movie {
     display: flex;
     margin: 10px;
-    background: rgb(255, 255, 255);
+    /* background: rgb(255, 255, 255); */
     transition: 0.5s;
     max-height: 100%;
     width: 70vh;
@@ -16,13 +16,6 @@
 }
 .container {
     display: block;
-}
-
-.card__info {
-    position: absolute;
-    display: none;
-
-    padding: 20px;
 }
 
 .Movie:hover {
