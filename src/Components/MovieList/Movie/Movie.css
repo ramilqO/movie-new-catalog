@@ -12,6 +12,7 @@
     max-height: 100%;
     width: 70vh;
     overflow: hidden;
+    position: relative;
 }
 .container {
     display: block;
@@ -31,21 +32,4 @@
 
 .Movie:hover > .card-img-top {
   transform: scale(1.1);
-}
-
-.rating {
-  width: 90px;
-  height: 90px;
-  text-align: center;
-  border: 6px solid green;
-  border-radius: 50%;
-  position: relative;
-}
-
-.rating__text {
-  position: absolute;
-  top: calc(50%);
-  left: calc(50%);
-
-  transform: translate(-50%, -50%);
 }
