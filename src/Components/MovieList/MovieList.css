@@ -6,11 +6,3 @@
 .container {
     justify-content: center;
 }
-
-.nav-link {
-    transition: 0.5s;
-}
-
-.nav-link:hover {
-    background-color: rgb(19, 69, 22);
-}
