@@ -15,6 +15,7 @@ const Movie = ({ id, title, year, summary, poster, rating }) => {
                     <p className='summary text-muted'>{summary.slice(0, 80)}...</p>
                     <hr />
                     <button className="btn btn-success">Смотреть</button>
+                    
                 </div>
 
             </div>

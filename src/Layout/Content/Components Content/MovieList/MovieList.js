@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import axios from "axios";
 
-import Movie from "./Movie/Movie";
+import Movie from "../../../../Components/Movie/Movie";
+import Loader from "../../../../Components/Loader";
+
+
 import "./MovieList.css";
 
 class MovieList extends Component {
+  
   state = {
     isLoaded: true,
     movies: [],
@@ -51,7 +55,7 @@ class MovieList extends Component {
     if (isLoaded) {
       return (
         <div className='loader text-center'>
-          <span>Загрузка...</span>
+          <Loader />
         </div>
       )
     } else {
@@ -82,15 +86,15 @@ class MovieList extends Component {
           <div className="container">
             <ul className="nav">
               <li className='nav-item m-3'>
-                <button className="btn btn-success" aria-current="page" href="/localhost" onClick={this.sortByYear}>Сортировать по году</button>
+                <button className="btn btn-success" aria-current="page" onClick={this.sortByYear}>Сортировать по году</button>
               </li>
 
               <li className="nav-item m-3">
-                <button className="btn btn-success" aria-current="page" href="#" onClick={this.sortByGenre}>Сортировать по жанру</button>
+                <button className="btn btn-success" aria-current="page" onClick={this.sortByGenre}>Сортировать по жанру</button>
               </li>
 
               <li className="nav-item m-3">
-                <button className="btn btn-success" aria-current="page" href="#" onClick={this.sortByRating}>Сортировать по рейтингу</button>
+                <button className="btn btn-success" aria-current="page" onClick={this.sortByRating}>Сортировать по рейтингу</button>
               </li>
             </ul>
           </div>
