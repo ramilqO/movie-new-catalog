@@ -13,14 +13,14 @@ const Sidebar = () => {
     <div className='Sidebar col-2'>
       <div className="container">
         <ul className="nav">
-          <li className="sidebar-item" to="/home">
+          <li className="sidebar-item col-12" to="/home">
           <AiFillFire className='icon' /> <Link className="nav-link text-dark" aria-current="page" to="/">Главная</Link>
           </li>
-          <li className="sidebar-item" to="/favorites">
+          <li className="sidebar-item col-12" to="/favorites">
             <AiFillStar className='icon' /><Link className="nav-link text-dark" aria-current="page" to="/favorites">Избранное</Link>
           </li>
 
-          <li className="sidebar-item d-flex" to="/list">
+          <li className="sidebar-item col-12" to="/list">
             <BsFillGrid1X2Fill className='icon' /><Link className="nav-link text-dark" aria-current="page" to="/list">Каталог</Link>
           </li>
 
