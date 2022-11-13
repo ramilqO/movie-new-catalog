@@ -30,7 +30,7 @@ const List = () => {
     useEffect(() => {
         getMovies();
          console.log("useeffect!!!");
-    }, [isLoaded]);
+    }, []);
 
     const renderMovies = () => {
         return (
