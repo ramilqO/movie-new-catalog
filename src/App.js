@@ -1,25 +1,17 @@
-import React, {Component} from 'react';
-import "./App.css"
-
-import Content from './Layout/Content/Content';
-import Navbar from './Layout/Navbar/Navbar';
-import Sidebar from './Layout/Sidebar/Sidebar';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-class App extends Component {
+import Navbar from './Layout/Navbar';
+import Content from './Layout/Content';
 
-  render() {
-    return(
-      <div className='App'>
-        <Navbar />
-        <div className="container-fluid d-flex">
-        <Sidebar />
-        <Content />
-        </div>
-      </div>
-    )
-  }
+const App = () => {
+  return (
+    <div>
+      <Navbar />
+      <Content />
+    </div>
+  );
 }
-
 
 export default App;
