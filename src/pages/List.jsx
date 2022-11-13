@@ -8,7 +8,7 @@ import { Container, NavDropdown } from 'react-bootstrap';
 const List = () => {
 
     const [isLoaded, setIsLoaded] = useState(false);
-    const [movies, fillMovies] = useState([]);
+    const [movies, setMovies] = useState([]);
     // const [sortByRating, sortByRatingFunc] = useState('rating');
     // const [sortByYear, sortByYearFunc] = useState('year');
     // const [sortByGenre, sortByGenreFunc] = useState('genre');
