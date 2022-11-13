@@ -30,7 +30,7 @@ const List = () => {
     useEffect(() => {
         getMovies();
          console.log("useeffect!!!");
-    });
+    }, [isLoaded]);
 
     const renderMovies = () => {
         return (
@@ -40,7 +40,7 @@ const List = () => {
                 year={movie.year}
                 poster={movie.large_cover_image}
                 id={movie.id}
-                key={movie.id + movie.index}
+                key={movie.id + 1}
             />)
         );
     }

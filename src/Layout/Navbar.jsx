@@ -9,9 +9,9 @@ function CollapsibleExample() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link><Link to='/main' style={{ textDecoration: "none", color: "grey" }}>Главная</Link></Nav.Link>
-            <Nav.Link><Link to="/list" style={{ textDecoration: "none", color: "grey" }}>Каталог</Link></Nav.Link>
-            <Nav.Link><Link to="/favorites" style={{ textDecoration: "none", color: "grey" }}>Избранное</Link></Nav.Link>
+            <Link to='/main' style={{ textDecoration: "none", color: "grey" }}>Главная</Link>
+            <Link to="/list" style={{ textDecoration: "none", color: "grey" }}>Каталог</Link>
+            <Link to="/favorites" style={{ textDecoration: "none", color: "grey" }}>Избранное</Link>
 
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
