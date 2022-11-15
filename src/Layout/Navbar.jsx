@@ -8,10 +8,10 @@ function CollapsibleExample() {
         <Navbar.Brand href="#home">Movie List</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Link to='/main' style={{ textDecoration: "none", color: "grey" }}>Главная</Link>
-            <Link to="/list" style={{ textDecoration: "none", color: "grey" }}>Каталог</Link>
-            <Link to="/favorites" style={{ textDecoration: "none", color: "grey" }}>Избранное</Link>
+          <Nav className="me-auto" style={{alignItems: "center"}}>
+            <Link to='/main' style={{ textDecoration: "none", color: "grey" }}><Nav.Item style={{marginRight: "10px"}}>Главная</Nav.Item></Link>
+            <Link to="/list" style={{ textDecoration: "none", color: "grey" }}><Nav.Item style={{marginRight: "10px"}}>Каталог</Nav.Item></Link>
+            <Link to="/favorites" style={{ textDecoration: "none", color: "grey" }}><Nav.Item style={{marginRight: "10px"}}>Избранное</Nav.Item></Link>
 
             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

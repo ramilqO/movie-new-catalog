@@ -4,17 +4,10 @@ import axios from 'axios';
 import Movie from '../components/Movie';
 import { Container, NavDropdown } from 'react-bootstrap';
 
-
 const List = () => {
 
     const [isLoaded, setIsLoaded] = useState(false);
     const [movies, setMovies] = useState([]);
-    // const [sortByRating, sortByRatingFunc] = useState('rating');
-    // const [sortByYear, sortByYearFunc] = useState('year');
-    // const [sortByGenre, sortByGenreFunc] = useState('genre');
-
-
-
 
     const getMovies = async () => {
         const {
@@ -24,7 +17,7 @@ const List = () => {
         } = await axios.get(`https://yts.mx/api/v2/list_movies.json?sort_by=rating`);
 
         setIsLoaded(true);
-        fillMovies(movies);
+        setMovies(movies);
     }
 
     useEffect(() => {
@@ -53,9 +46,10 @@ const List = () => {
         }
     }
 
+    
     return (
         <div>
-            <NavDropdown title="Сортировать по" id="collasible-nav-dropdown" style={{ display: "block", textAlign: "center", maxHeight: "10vh", margin: "10px" }}>
+            <NavDropdown title="Сортировать по" id="collasible-nav-dropdown" style={{ display: "block", textAlign: "center", margin: "10px" }}>
                 <NavDropdown.Item>Рейтингу</NavDropdown.Item>
                 <NavDropdown.Item>Году</NavDropdown.Item>
                 <NavDropdown.Item>Жанру</NavDropdown.Item>
