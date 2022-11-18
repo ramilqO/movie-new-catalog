@@ -1,9 +1,9 @@
-import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
+import { Nav, Navbar, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function CollapsibleExample() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" style={{height: "10vh"}} fixed='top'>
+    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" style={{maxHeight: "30vh"}} fixed='top'>
       <Container>
         <Navbar.Brand href="#home">Movie List</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
