@@ -52,9 +52,9 @@ const List = () => {
             <Container style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
                 <div style={{ height: "50px" }}>
                     <NavDropdown title="Сортировать по" id="collasible-nav-dropdown" style={{ display: "flex", textAlign: "center", margin: "10px" }}>
-                        <NavDropdown.Item onClick={() => {changeSorting('rating');}}>Рейтингу</NavDropdown.Item>
-                        <NavDropdown.Item onClick={() => {changeSorting('year');}}>Году</NavDropdown.Item>
-                        <NavDropdown.Item onClick={() => {changeSorting('genre');}}>Жанру</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => {changeSorting('rating'); getMovies();}}>Рейтингу</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => {changeSorting('year'); getMovies();}}>Году</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => {changeSorting('genre'); getMovies();}}>Жанру</NavDropdown.Item>
                     </NavDropdown>
                 </div>
             </Container>
