@@ -8,23 +8,21 @@ const List = () => {
 
     const [isLoaded, setIsLoaded] = useState(false);
     const [movies, setMovies] = useState([]);
-    const [sortBy, changeSorting] = useState('rating');
+    const [sortBy, setSortBy] = useState('rating');
 
     const getMovies = async () => {
-        const {
-            data: { data:
-                { movies }
-            }
-        } = await axios.get(`https://yts.mx/api/v2/list_movies.json?sort_by=${sortBy}`);
-
         setIsLoaded(true);
+
+        const request = await axios.get(`https://yts.mx/api/v2/list_movies.json?sort_by=${sortBy}`);
+        let movies = request.data.data.movies;
+        
         setMovies(movies);
     }
 
     useEffect(() => {
         getMovies();
         console.log("useeffect!!!");
-    }, []);
+    }, [sortBy]);
 
     const renderMovies = () => {
         return (
@@ -52,9 +50,9 @@ const List = () => {
             <Container style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
                 <div style={{ height: "50px" }}>
                     <NavDropdown title="Сортировать по" id="collasible-nav-dropdown" style={{ display: "flex", textAlign: "center", margin: "10px" }}>
-                        <NavDropdown.Item onClick={() => {changeSorting('rating'); getMovies();}}>Рейтингу</NavDropdown.Item>
-                        <NavDropdown.Item onClick={() => {changeSorting('year'); getMovies();}}>Году</NavDropdown.Item>
-                        <NavDropdown.Item onClick={() => {changeSorting('genre'); getMovies();}}>Жанру</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => {setSortBy('rating');}}>Рейтингу</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => {setSortBy('year');}}>Году</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => {setSortBy('genre');}}>Жанру</NavDropdown.Item>
                     </NavDropdown>
                 </div>
             </Container>
