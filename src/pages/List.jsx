@@ -33,6 +33,7 @@ const List = () => {
                 poster={movie.large_cover_image}
                 id={movie.id}
                 key={movie.id + 1}
+                rating={movie.rating}
             />)
         );
     }
