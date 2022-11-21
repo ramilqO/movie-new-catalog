@@ -6,6 +6,7 @@ import Navbar from './Layout/Navbar';
 import Content from './Layout/Content';
 
 const App = () => {
+
   return (
     <div>
       <Navbar />

@@ -1,27 +1,31 @@
 import Movie from '../components/Movie';
-import favorites from '../FavoritesData/Favorites';
 
 import { Container } from 'react-bootstrap';
 
 
 
-const Favorites = () => {
+const Favorites = () => {        
+
+    const getFavoriteMovies = () => {
+        return JSON.parse(localStorage.getItem('favorites')) || []; //берем избранные фильмы из массива
+    }
 
     const checkFavorites = () => {
-        if (favorites.length === 0) {
+
+        if (getFavoriteMovies().length === 0) {
             return (
                 <h1>Вы пока что не добавляли никаких фильмов в избранное</h1>
             );
         } else {
             return (
             <Container style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
-                {favorites.map(movie => <Movie
+                {getFavoriteMovies().map(movie => <Movie
                     title={movie.title}
                     summary={movie.summary}
                     year={movie.year}
-                    poster={movie.large_cover_image}
+                    poster={movie.poster}
                     id={movie.id}
-                    key={movie.id + 1}
+                    key={movie.id + movie.id}
                     rating={movie.rating}
                 />)}
             </Container>);
