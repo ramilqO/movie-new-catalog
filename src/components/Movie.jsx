@@ -5,19 +5,19 @@ import { useState } from 'react';
 
 function Movie({ title, summary, year, poster, rating, id}) {
 
-  const [buttonDisabled, setButtonDisabled] = useState('');
+  const [buttonPush, setButtonPush] = useState('');
   const [buttonDelete, setButtonDelete] = useState('d-none');
   
 
   const pushMovieOnStorage = () => {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    let item = {title: title, summary: summary, year: year, poster: poster, rating: rating, id: id, isFavorite: true};
+    let item = {title: title, summary: summary, year: year, poster: poster, rating: rating, id: id};
     favorites.push(item); //пушим в массив обьект фильма
     localStorage.setItem('favorites', JSON.stringify(favorites)); //превращаем массив в строку и добавляем в localStorage
 
     console.log(favorites);
 
-    setButtonDisabled('d-none');
+    setButtonPush('d-none');
     setButtonDelete('d-block');
   }
 
@@ -28,11 +28,11 @@ function Movie({ title, summary, year, poster, rating, id}) {
     let index = favorites.indexOf(item);
 
     favorites.splice(index, 1);
-    
+
     localStorage.setItem('favorites', JSON.stringify(favorites));
     console.log(favorites);
 
-    setButtonDisabled('d-block');
+    setButtonPush('d-block');
     setButtonDelete('d-none');
   }
 
@@ -49,7 +49,7 @@ function Movie({ title, summary, year, poster, rating, id}) {
         <Container style={{ display: 'flex', justifyContent: 'space-between', width: "100%", padding: "0", textAlign: "center" }}>
           <Button variant="primary">Смотреть</Button>
           <h3>{rating}</h3>
-          <Button variant='success' onClick={pushMovieOnStorage} className={buttonDisabled}><BsFillBookmarkPlusFill /></Button>
+          <Button variant='success' onClick={pushMovieOnStorage} className={buttonPush}><BsFillBookmarkPlusFill /></Button>
           <Button variant='danger' onClick={deleteMovieFromStorage} className={buttonDelete}><BsFillBookmarkDashFill /></Button>
         </Container>
       </Card.Body>

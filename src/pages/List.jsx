@@ -9,6 +9,7 @@ const List = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [movies, setMovies] = useState([]);
     const [sortBy, setSortBy] = useState('rating');
+    
     const getMovies = async () => {
         setIsLoaded(true);
 
