@@ -18,13 +18,14 @@ const Favorites = () => {
         } else {
             return (
             <Container style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }}>
-                {getFavoritesMovies().map(movie => <Movie
+                {getFavoritesMovies().map((movie, index) => <Movie
                     title={movie.title}
                     summary={movie.summary}
                     year={movie.year}
                     poster={movie.poster}
                     id={movie.id}
-                    key={movie.id + movie.id}
+                    index={index}
+                    key={movie.id + index}
                     rating={movie.rating}
                 />)}
             </Container>);

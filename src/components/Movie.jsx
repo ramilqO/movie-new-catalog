@@ -3,14 +3,16 @@ import { BsFillBookmarkPlusFill, BsFillBookmarkDashFill} from 'react-icons/bs';
 
 import { useState } from 'react';
 
-function Movie({ title, summary, year, poster, rating, id }) {
+function Movie({ title, summary, year, poster, rating, id}) {
 
-  let [buttonDisabled, setButtonDisabled] = useState('');
-  let [buttonDelete, setButtonDelete] = useState('d-none');
+  const [buttonDisabled, setButtonDisabled] = useState('');
+  const [buttonDelete, setButtonDelete] = useState('d-none');
+  
 
   const pushMovieOnStorage = () => {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || []; //берем массив из localStorage
-    favorites.push({title: title, summary: summary, year: year, poster: poster, rating: rating, id: id}); //пушим в массив обьект фильма
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    let item = {title: title, summary: summary, year: year, poster: poster, rating: rating, id: id, isFavorite: true};
+    favorites.push(item); //пушим в массив обьект фильма
     localStorage.setItem('favorites', JSON.stringify(favorites)); //превращаем массив в строку и добавляем в localStorage
 
     console.log(favorites);
@@ -20,10 +22,14 @@ function Movie({ title, summary, year, poster, rating, id }) {
   }
 
   const deleteMovieFromStorage = () => {
-    const favorites = JSON.parse(localStorage.getItem('favorites'));
-    favorites.pop();
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+    let favorites = JSON.parse(localStorage.getItem('favorites'));
 
+    let item = favorites.find(favorite => favorite.id === id);
+    let index = favorites.indexOf(item);
+
+    favorites.splice(index, 1);
+    
+    localStorage.setItem('favorites', JSON.stringify(favorites));
     console.log(favorites);
 
     setButtonDisabled('d-block');
@@ -31,7 +37,7 @@ function Movie({ title, summary, year, poster, rating, id }) {
   }
 
   return (
-    <Card style={{ width: '250px', marginBottom: "10px", height: "80vh", cursor: "pointer" }} className="bg-dark text-light">
+    <Card style={{ width: '250px', marginBottom: "10px", height: "80vh", cursor: "pointer" }} className={'bg-dark text-light '}>
       <Card.Img variant="top" src={poster} alt={title} style={{ width: "100%", minHeight: "45%", overflow: "hidden" }} />
       <Card.Body>
         <Card.Title>{title.slice(0, 18)}</Card.Title>
@@ -43,7 +49,7 @@ function Movie({ title, summary, year, poster, rating, id }) {
         <Container style={{ display: 'flex', justifyContent: 'space-between', width: "100%", padding: "0", textAlign: "center" }}>
           <Button variant="primary">Смотреть</Button>
           <h3>{rating}</h3>
-          <Button onClick={pushMovieOnStorage} className={buttonDisabled}><BsFillBookmarkPlusFill /></Button>
+          <Button variant='success' onClick={pushMovieOnStorage} className={buttonDisabled}><BsFillBookmarkPlusFill /></Button>
           <Button variant='danger' onClick={deleteMovieFromStorage} className={buttonDelete}><BsFillBookmarkDashFill /></Button>
         </Container>
       </Card.Body>
