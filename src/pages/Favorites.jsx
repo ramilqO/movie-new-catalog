@@ -1,7 +1,6 @@
 import Movie from '../components/Movie';
 import { Container } from 'react-bootstrap';
-
-
+import { useEffect } from 'react';
 
 const Favorites = () => {        
 
@@ -9,6 +8,11 @@ const Favorites = () => {
         return JSON.parse(localStorage.getItem('favorites')) || []; //берем избранные фильмы из массива
     }
 
+    useEffect(() => {
+        getFavoritesMovies();
+        console.log("useeffect!!!");
+    }, []); 
+    
     const checkFavorites = () => {
 
         if (getFavoritesMovies().length === 0) {
@@ -27,6 +31,7 @@ const Favorites = () => {
                     index={index}
                     key={movie.id + index}
                     rating={movie.rating}
+                    isFavorite
                 />)}
             </Container>);
         }
