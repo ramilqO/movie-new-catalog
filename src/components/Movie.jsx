@@ -1,14 +1,19 @@
 import { Button, Card, Container } from 'react-bootstrap';
-import { BsFillBookmarkPlusFill, BsFillBookmarkDashFill} from 'react-icons/bs';
+import { BsFillBookmarkPlusFill, BsFillBookmarkDashFill } from 'react-icons/bs';
 
-function Movie({ title, summary, year, poster, rating, id, isFavorite}) {
+import { useState } from 'react';
+
+function Movie({ title, summary, year, poster, rating, id, isFavorite }) {
+
+  let [isDisabled, setIsDisabled] = useState(false);
 
   const pushMovieOnStorage = () => {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    let item = {title: title, summary: summary, year: year, poster: poster, rating: rating, id: id, isFavorite: true};
+    let item = { title: title, summary: summary, year: year, poster: poster, rating: rating, id: id, isFavorite: true };
     favorites.push(item);
 
     localStorage.setItem('favorites', JSON.stringify(favorites));
+    setIsDisabled(true);
 
     console.log(favorites);
   }
@@ -18,10 +23,11 @@ function Movie({ title, summary, year, poster, rating, id, isFavorite}) {
 
     let item = favorites.find(favorite => favorite.id === id);
     let index = favorites.indexOf(item);
-
     favorites.splice(index, 1);
 
     localStorage.setItem('favorites', JSON.stringify(favorites));
+    setIsDisabled(true);
+
     console.log(favorites);
   }
 
@@ -39,10 +45,12 @@ function Movie({ title, summary, year, poster, rating, id, isFavorite}) {
           <Button variant="primary">Смотреть</Button>
           <h3>{rating}</h3>
 
-          <Button 
-           variant={isFavorite ? 'danger' : 'success'}
-           onClick={isFavorite ? deleteMovieFromStorage : pushMovieOnStorage}>
-           {isFavorite ? <BsFillBookmarkDashFill /> : <BsFillBookmarkPlusFill /> }
+          <Button
+            variant={isFavorite ? 'danger' : 'success'}
+            onClick={isFavorite ? deleteMovieFromStorage : pushMovieOnStorage}
+            disabled={isDisabled}
+          >
+            {isFavorite ? <BsFillBookmarkDashFill /> : <BsFillBookmarkPlusFill />}
           </Button>
 
         </Container>
