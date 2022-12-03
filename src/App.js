@@ -2,11 +2,10 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-import Navbar from './Layout/Navbar';
-import Content from './Layout/Content';
+import Navbar from './layout/Navbar';
+import Content from './layout/Content';
 
 const App = () => {
-
   return (
     <div>
       <Navbar />

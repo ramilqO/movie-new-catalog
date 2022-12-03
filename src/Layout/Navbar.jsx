@@ -5,7 +5,7 @@ function CollapsibleExample() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" style={{maxHeight: "30vh"}} fixed='top'>
       <Container>
-        <Navbar.Brand href="#home">Movie List</Navbar.Brand>
+        <Navbar.Brand>MList</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto" style={{ alignItems: "center" }}>
