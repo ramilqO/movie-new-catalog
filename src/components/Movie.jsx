@@ -9,8 +9,17 @@ function Movie({ title, summary, year, poster, rating, id, isFavorite }) {
 
   const pushMovieOnStorage = () => {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    
     let item = { title: title, summary: summary, year: year, poster: poster, rating: rating, id: id, isFavorite: true };
     favorites.push(item);
+
+    let arr = [];
+
+    favorites.map(favorite => arr.push(JSON.stringify(favorite)))
+    favorites = [...new Set(arr)];
+    let newArr = []
+    favorites.map(favorite => newArr.push(JSON.parse(favorite)));
+    favorites = newArr;
 
     localStorage.setItem('favorites', JSON.stringify(favorites));
     setIsDisabled(true);
