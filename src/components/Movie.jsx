@@ -44,7 +44,7 @@ function Movie({ title, summary, year, poster, rating, id, isFavorite }) {
 
   return (
     <Card style={{ width: '250px', marginBottom: "10px", cursor: "pointer", height: "60%" }} className='bg-dark text-light '>
-      <Card.Img variant="top" src={poster} alt={title} style={{ width: "100%", height: '35vh', overflow: "hidden" }} />
+      <Card.Img variant="top" src={poster} alt={title} style={{ width: "100%", height: '45vh', overflow: "hidden" }} />
       <Card.Body>
         <Card.Title>{title.slice(0, 18)}</Card.Title>
         <Card.Text className="text-muted">
