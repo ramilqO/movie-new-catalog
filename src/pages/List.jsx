@@ -34,6 +34,8 @@ const List = () => {
                 id={movie.id}
                 key={movie.id + 1}
                 rating={movie.rating}
+                genres={movie.genres}
+                torrents={movie.torrents}
             />)
         );
     }

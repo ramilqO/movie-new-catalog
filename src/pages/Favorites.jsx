@@ -31,6 +31,8 @@ const Favorites = () => {
                     index={index}
                     key={movie.id + index}
                     rating={movie.rating}
+                    torrents={movie.torrents}
+                    genres={movie.genres}
                     isFavorite
                 />)}
             </Container>);
