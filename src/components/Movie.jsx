@@ -4,7 +4,6 @@ import { BsFillBookmarkPlusFill, BsFillBookmarkDashFill } from 'react-icons/bs';
 import { useState } from 'react';
 
 import ModalOverlay from './Modal';
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 import { Placeholder } from 'react-bootstrap';
