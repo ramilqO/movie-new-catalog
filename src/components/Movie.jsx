@@ -4,6 +4,10 @@ import { BsFillBookmarkPlusFill, BsFillBookmarkDashFill } from 'react-icons/bs';
 import { useState } from 'react';
 
 import ModalOverlay from './Modal';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+
+import { Placeholder } from 'react-bootstrap';
 
 function Movie({ title, summary, year, poster, rating, id, genres, torrents, isFavorite }) {
 
@@ -41,23 +45,27 @@ function Movie({ title, summary, year, poster, rating, id, genres, torrents, isF
   }
 
   return (
-    <Card style={{ width: '250px', marginBottom: "10px", cursor: "pointer", height: "60%" }} className='bg-dark text-light '>
-      <Card.Img variant="top" src={poster} alt={title} style={{ width: "100%", height: '45vh', overflow: "hidden" }} />
+    <Card style={{ width: '250px', marginBottom: "10px", cursor: "pointer", height: "100%" }} className='bg-dark text-light '>
+      <Card.Img variant="top" src={poster} alt='picture'
+        style={{ width: "100%", height: '50%', overflow: "hidden" }}
+      />
       <Card.Body>
-        <Card.Title>{title.slice(0, 18)}</Card.Title>
+        <Card.Title>{title.slice(0, 18) || <Placeholder as={Card.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>}</Card.Title>
 
-        <Card.Text className="text-muted">
-          {summary.slice(0, 70)}...
+        <Card.Text className="text-muted" style={{ height: '80px' }}>
+          {summary.slice(0, 70) || 
+          <Placeholder as={Card.Text} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>}
         </Card.Text>
+
         <Card.Subtitle>{year}</Card.Subtitle>
-  
+
         <Container style={{ display: 'flex', justifyContent: 'space-between', width: "100%", padding: "0", textAlign: "center" }}>
 
-          <ModalOverlay         
-          title={title}
-          summary={summary.slice(0, 200)}
-          genres={genres}
-          torrents={torrents}
+          <ModalOverlay
+            title={title}
+            summary={summary.slice(0, 200)}
+            genres={genres}
+            torrents={torrents}
           />
 
           <h3>{rating}</h3>

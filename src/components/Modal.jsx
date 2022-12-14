@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
+import { Placeholder } from 'react-bootstrap';
+
 function ModalOverlay({ title, summary, torrents, genres }) {
 
   const [show, setShow] = useState(false);
@@ -23,7 +25,7 @@ function ModalOverlay({ title, summary, torrents, genres }) {
 
       >
         <Modal.Header closeButton>  {/*title*/}
-          <Modal.Title>{title}</Modal.Title>
+          <Modal.Title>{title || <Placeholder as={Modal.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>}</Modal.Title>
         </Modal.Header>
         <Modal.Header>
 
@@ -35,7 +37,7 @@ function ModalOverlay({ title, summary, torrents, genres }) {
           
         </Modal.Header>
         <Modal.Body>
-          {summary}
+          {summary || <Placeholder as={Modal.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
