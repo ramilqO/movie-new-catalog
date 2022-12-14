@@ -4,7 +4,6 @@ import { BsFillBookmarkPlusFill, BsFillBookmarkDashFill } from 'react-icons/bs';
 import { useState } from 'react';
 
 import ModalOverlay from './Modal';
-import 'react-loading-skeleton/dist/skeleton.css';
 
 import { Placeholder } from 'react-bootstrap';
 
@@ -45,8 +44,7 @@ function Movie({ title, summary, year, poster, rating, id, genres, torrents, isF
 
   return (
     <Card style={{ width: '250px', marginBottom: "10px", cursor: "pointer", height: "100%" }} className='bg-dark text-light '>
-      <Card.Img variant="top" src={poster} alt='picture'
-        style={{ width: "100%", height: '50%', overflow: "hidden" }}
+    <Card.Img variant="top" src={poster} alt='picture' style={{ width: "100%", height: '50%', overflow: "hidden" }}
       />
       <Card.Body>
         <Card.Title>{title.slice(0, 18) || <Placeholder as={Card.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>}</Card.Title>
