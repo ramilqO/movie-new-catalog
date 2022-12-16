@@ -1,11 +1,9 @@
-import { Button, Card, Container } from 'react-bootstrap';
+import { Button, Card, Container, Placeholder } from 'react-bootstrap';
 import { BsFillBookmarkPlusFill, BsFillBookmarkDashFill } from 'react-icons/bs';
 
 import { useState } from 'react';
 
 import ModalOverlay from './Modal';
-
-import { Placeholder } from 'react-bootstrap';
 
 function Movie({ title, summary, year, poster, rating, id, genres, torrents, isFavorite }) {
 
@@ -43,8 +41,8 @@ function Movie({ title, summary, year, poster, rating, id, genres, torrents, isF
   }
 
   return (
-    <Card style={{ width: '250px', marginBottom: "10px", cursor: "pointer", height: "100%" }} className='bg-dark text-light '>
-    <Card.Img variant="top" src={poster} alt='picture' style={{ width: "100%", height: '50%', overflow: "hidden" }}
+    <Card style={{ width: '250px', marginBottom: "10px", cursor: "pointer" }} className='bg-dark text-light '>
+    <Card.Img variant="top" src={poster} alt='holder.js/300x200' style={{ width: "100%", height: '300px', overflow: "hidden" }}
       />
       <Card.Body>
         <Card.Title>{title.slice(0, 18) || <Placeholder as={Card.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>}</Card.Title>

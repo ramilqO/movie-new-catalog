@@ -29,7 +29,7 @@ function ModalOverlay({ title, summary, torrents, genres }) {
         </Modal.Header>
         <Modal.Header>
 
-          <div style={{ display: 'flex', justifyContent: 'space-between', minWidth: '25vw', maxWidth: '80vw', flexWrap: 'wrap' }}> {/*genres*/}
+          <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}> {/*genres*/}
             {genres.map((genre, index) => <h6 style={{marginRight: '15px'}} key={index}>{genre}</h6>)}
           </div>
 

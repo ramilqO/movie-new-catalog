@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function CollapsibleExample() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" style={{maxHeight: "30vh"}} fixed='top'>
+    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" style={{maxHeight: "40vh"}} fixed='top'>
       <Container>
         <Navbar.Brand>MList</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
