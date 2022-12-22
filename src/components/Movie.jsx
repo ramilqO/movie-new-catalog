@@ -17,7 +17,7 @@ function Movie({ title, summary, year, poster, rating, id, genres, torrents, isF
 
     favorites.map(favorite => arr.push(JSON.stringify(favorite)))
     favorites = [...new Set(arr)];
-    let newArr = []
+    let newArr = [];
     favorites.map(favorite => newArr.push(JSON.parse(favorite)));
     favorites = newArr;
 
@@ -41,19 +41,21 @@ function Movie({ title, summary, year, poster, rating, id, genres, torrents, isF
   }
 
   return (
-    <Card style={{ width: '250px', marginBottom: "10px", cursor: "pointer" }} className='bg-dark text-light '>
-    <Card.Img variant="top" src={poster} alt='holder.js/300x200' style={{ width: "100%", height: '300px', overflow: "hidden" }}
+    <Card style={{ width: '250px', marginBottom: "10px", cursor: "pointer", height: '480px' }} className='bg-dark text-light '>
+      <Card.Img variant="top" src={poster} alt='holder.js/300x200' style={{ width: "100%", height: '320px', overflow: "hidden" }}
       />
       <Card.Body>
         <Card.Title>{title.slice(0, 18) || <Placeholder as={Card.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>}</Card.Title>
 
-        <Card.Text className="text-muted" style={{ height: '80px' }}>
-          {summary.slice(0, 70) || 
-          <Placeholder as={Card.Text} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>}
+        <Card.Text className="text-muted" style={{ height: '60px' }}>
+          {summary.slice(0, 70) || <>
+            <Placeholder as={Card.Text} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>
+            <Placeholder as={Card.Text} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>
+          </>}
         </Card.Text>
 
         <Card.Subtitle>{year}</Card.Subtitle>
-
+        <hr />
         <Container style={{ display: 'flex', justifyContent: 'space-between', width: "100%", padding: "0", textAlign: "center" }}>
 
           <ModalOverlay

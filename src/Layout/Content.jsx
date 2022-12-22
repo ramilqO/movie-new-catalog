@@ -7,9 +7,13 @@ import List from '../pages/List';
 import Favorites from '../pages/Favorites';
 import NotFound from '../pages/NotFound';
 
+import Particle from '../components/Particle';
+
 const Content = () => {
     return (
         <div style={{marginTop: "10vh"}}>
+        <Particle />
+
             <Routes>
                 <Route path='/' element={<Main />} />
                 <Route path="/main" element={<Main />} />

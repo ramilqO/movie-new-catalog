@@ -37,7 +37,12 @@ function ModalOverlay({ title, summary, torrents, genres }) {
           
         </Modal.Header>
         <Modal.Body>
-          {summary || <Placeholder as={Modal.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>}
+          {summary ||
+          <>
+           <Placeholder as={Modal.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>
+           <Placeholder as={Modal.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>
+           </>
+           }
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
