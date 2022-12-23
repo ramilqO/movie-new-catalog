@@ -13,7 +13,6 @@ const Content = () => {
     return (
         <div style={{marginTop: "10vh"}}>
         <Particle />
-        <div>
             <Routes>
                 <Route path='/' element={<Main />} />
                 <Route path="/main" element={<Main />} />
@@ -21,7 +20,6 @@ const Content = () => {
                 <Route path='/list' element={<List />} />
                 <Route path='*' element={<NotFound />} />
         </Routes>
-        </div>
         </div >
     );
 }
