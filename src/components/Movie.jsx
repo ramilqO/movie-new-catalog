@@ -41,7 +41,7 @@ function Movie({ title, summary, year, poster, rating, id, genres, torrents, isF
   }
 
   return (
-    <Card style={{ width: '250px', marginBottom: "10px", cursor: "pointer", height: '480px' }} className='bg-dark text-light '>
+    <Card style={{ width: '250px', marginBottom: "10px", cursor: "pointer", height: '480px' }} className='bg-dark text-light border border-0 border-none '>
       <Card.Img variant="top" src={poster} alt='holder.js/300x200' style={{ width: "100%", height: '320px', overflow: "hidden" }}
       />
       <Card.Body>

@@ -13,7 +13,6 @@ const Content = () => {
     return (
         <div style={{marginTop: "10vh"}}>
         <Particle />
-
             <Routes>
                 <Route path='/' element={<Main />} />
                 <Route path="/main" element={<Main />} />
