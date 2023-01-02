@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Movie from '../components/Movie';
-import { Container, NavDropdown } from 'react-bootstrap';
+import { Container, DropdownButton, NavDropdown } from 'react-bootstrap';
 
 const List = () => {
 
@@ -44,19 +44,19 @@ const List = () => {
         if (isLoaded) {
             return renderMovies();
         } else {
-            return <h1>Loading...</h1>;
+            return <h1>Loading...</h1>
         }
     }
 
     return (
         <div>
             <Container style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
-                <div style={{ height: "50px" }}>
-                    <NavDropdown title="Сортировать по" id="collasible-nav-dropdown" style={{ display: "flex", textAlign: "center", margin: "10px", color: "white" }}>
+                <div className='mb-2' style={{ height: "50px" }}>
+                    <DropdownButton title="Сортировать по" id="collasible-nav-dropdown" style={{ display: "flex", textAlign: "center", margin: "10px", color: "white" }}>
                         <NavDropdown.Item onClick={() => { setSortBy('rating'); }}>Рейтингу</NavDropdown.Item>
                         <NavDropdown.Item onClick={() => { setSortBy('year'); }}>Году</NavDropdown.Item>
                         <NavDropdown.Item onClick={() => { setSortBy('genre'); }}>Жанру</NavDropdown.Item>
-                    </NavDropdown>
+                    </DropdownButton>
                 </div>
             </Container>
 

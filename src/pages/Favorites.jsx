@@ -34,7 +34,7 @@ const Favorites = () => {
                         poster={movie.poster}
                         id={movie.id}
                         index={index}
-                        key={movie.id + index}
+                        key={movie.title}
                         rating={movie.rating}
                         torrents={movie.torrents}
                         genres={movie.genres}

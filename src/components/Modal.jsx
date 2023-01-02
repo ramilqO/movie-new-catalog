@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-import { Placeholder } from 'react-bootstrap';
+import { ButtonGroup, Placeholder } from 'react-bootstrap';
 
 function ModalOverlay({ title, summary, torrents, genres }) {
 
@@ -30,26 +30,24 @@ function ModalOverlay({ title, summary, torrents, genres }) {
         <Modal.Header>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}> {/*genres*/}
-            {genres.map((genre, index) => <h6 style={{marginRight: '15px'}} key={index}>{genre}</h6>)}
+            {genres.map((genre, index) => <h6 style={{ marginRight: '15px' }} key={index}>{genre}</h6>)}
           </div>
 
-          <div>{torrents.map((torrent, index) => <h5 key={index}>{torrent.quality}</h5>)}</div> 
-          
         </Modal.Header>
         <Modal.Body>
           {summary ||
-          <>
-           <Placeholder as={Modal.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>
-           <Placeholder as={Modal.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>
-           </>
-           }
+            <>
+              <Placeholder as={Modal.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>
+              <Placeholder as={Modal.Title} animation='glow'><Placeholder xs={12} size='lg' /></Placeholder>
+            </>
+          }
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Закрыть
           </Button>
-          {torrents.map((torrent, index) => <Button key={index} href={torrent.url}>Скачать {torrent.quality}</Button>)}        
-          </Modal.Footer>
+          <ButtonGroup>{torrents.map((torrent, index) => <Button key={index} href={torrent.url}>{torrent.quality}</Button>)}</ButtonGroup>
+        </Modal.Footer>
       </Modal>
     </>
   );
